@@ -11,7 +11,7 @@ const ROCKS = []
 const START = document.getElementById('start')
 
 var gameInterval = null
-var globalID;
+
 
 /**
  * Be aware of what's above this line,
@@ -106,7 +106,7 @@ function createRock(x) {
   ROCKS.push(rock);
   //console.log("Length of ROCKS...> "+ROCKS.length)
   // We should kick of the animation of the rock around here
-  globalID = window.requestAnimationFrame(moveRock);
+  window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
 
