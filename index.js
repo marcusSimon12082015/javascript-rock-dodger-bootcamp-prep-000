@@ -11,7 +11,7 @@ const ROCKS = []
 const START = document.getElementById('start')
 
 var gameInterval = null
-var endOfFun = false;
+
 /**
  * Be aware of what's above this line,
  * but all of your work should happen below.
@@ -83,31 +83,29 @@ function createRock(x) {
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-     if (endOfFun != true) {
-       var border = GAME_HEIGHT - 20;
-       var RockNum = positionToInteger(rock.style.top);
-       rock.style.top = `${RockNum + 2}px`;
+      var border = GAME_HEIGHT - 20;
+     var RockNum = positionToInteger(rock.style.top);
+     rock.style.top = `${RockNum + 2}px`;
 
-       if(checkCollision(rock)) {
-         endGame();
-         endOfFun = true;
-         return;
-       }else if(RockNum < border){
-         /**
-         * Otherwise, if the rock hasn't reached the bottom of
-         * the GAME, we want to move it again.
-         */
-         //console.log(`Top vrednost za --> ${rock.style.top}`);
-         window.requestAnimationFrame(moveRock);
-
-       }else{
-         rock.remove();
-       }
+     if(checkCollision(rock)) {
+       endGame();
+       endOfFun = true;
+       return;
+     }else if(RockNum < border){
        /**
-       * But if the rock *has* reached the bottom of the GAME,
-       * we should remove the rock from the DOM
+       * Otherwise, if the rock hasn't reached the bottom of
+       * the GAME, we want to move it again.
        */
+       //console.log(`Top vrednost za --> ${rock.style.top}`);
+       window.requestAnimationFrame(moveRock);
+
+     }else{
+       rock.remove();
      }
+     /**
+     * But if the rock *has* reached the bottom of the GAME,
+     * we should remove the rock from the DOM
+     */
     }
 
   ROCKS.push(rock);
