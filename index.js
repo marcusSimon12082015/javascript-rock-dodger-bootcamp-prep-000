@@ -77,6 +77,7 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
+    console.log("moveRock length " + ROCKS.length);
      var border = GAME_HEIGHT - 20;
      var RockNum = positionToInteger(rock.style.top);
      rock.style.top = `${RockNum + 2}px`;
