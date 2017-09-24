@@ -11,6 +11,7 @@ const ROCKS = []
 const START = document.getElementById('start')
 
 var gameInterval = null
+var globalID;
 
 /**
  * Be aware of what's above this line,
@@ -69,8 +70,7 @@ function createRock(x) {
    * it to GAME and move it downwards.
    */
   GAME.appendChild(rock);
-  var globalID;
-  //window.requestAnimationFrame(moveRock);
+    //window.requestAnimationFrame(moveRock);
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
