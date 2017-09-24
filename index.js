@@ -124,6 +124,7 @@ function createRock(x) {
  */
 function endGame() {
   window.clearInterval(gameInterval);
+  gameInterval = 0;
   console.log("ROCKS LENGTH -->"+ROCKS.length);
   console.log(GAME);
   var elements = document.getElementsByClassName('rock');
