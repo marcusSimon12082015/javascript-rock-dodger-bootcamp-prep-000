@@ -90,6 +90,7 @@ function createRock(x) {
      if(checkCollision(rock)) {
        endGame();
        window.cancelAnimationFrame(globalID);
+       return;
        /**
        * Otherwise, if the rock hasn't reached the bottom of
        * the GAME, we want to move it again.
