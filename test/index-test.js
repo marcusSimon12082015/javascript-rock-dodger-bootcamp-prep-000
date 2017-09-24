@@ -162,7 +162,7 @@ describe('Rock Dodger', () => {
 
   })
 
-/*
+
   describe('moveDodger(e)', () => {
     beforeEach(() => {
       window.requestAnimationFrame = () => {}
@@ -321,7 +321,7 @@ describe('Rock Dodger', () => {
 
       expect(dodger.style.left).toEqual('360px')
     })
-*/
+
   })
 
 })
