@@ -90,6 +90,7 @@ function createRock(x) {
      if(checkCollision(rock)) {
        endGame();
        window.cancelAnimationFrame(globalID);
+       globalID = undefined;
        return;
        /**
        * Otherwise, if the rock hasn't reached the bottom of
