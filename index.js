@@ -106,7 +106,6 @@ function createRock(x) {
     }
 
   ROCKS.push(rock);
-  console.log("Length of ROCKS...> "+ROCKS.length)
   // We should kick of the animation of the rock around here
   //window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
@@ -126,10 +125,6 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-//  while (ROCKS.length > 0) {
-//    ROCKS[0].remove();
-//    debugger;
-//  }
   ROCKS.forEach(function(el){el.remove()});
   window.removeEventListener('keydown', moveDodger);
   return alert("YOU LOSE!");
