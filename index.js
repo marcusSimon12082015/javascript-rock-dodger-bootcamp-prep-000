@@ -65,12 +65,13 @@ function createRock(x) {
   var top = 0
 
   rock.style.top = top
+
   /**
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
   GAME.appendChild(rock);
-    //window.requestAnimationFrame(moveRock);
+  window.requestAnimationFrame(moveRock);
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
@@ -78,40 +79,43 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-     var border = GAME_HEIGHT - 20;
-     var RockNum = positionToInteger(rock.style.top);
-     rock.style.top = `${RockNum + 2}px`;
-
-     /**
+    /**
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-     if(checkCollision(rock)) {
-       return endGame();
-       /**
-       * Otherwise, if the rock hasn't reached the bottom of
-       * the GAME, we want to move it again.
-       */
-     }else if(RockNum < border){
-      window.requestAnimationFrame(moveRock);
-     }else{
-       /**
-       * But if the rock *has* reached the bottom of the GAME,
-       * we should remove the rock from the DOM
-       */
-       GAME.remove(rock);
-     }
+     var border = GAME_HEIGHT - 20;
+     var RockNum = positionToInteger(rock.style.top);
+     if (checkCollision(rock)) {
+       endGame();
+     }else if(RockNum != border){
+    /**
+     * Otherwise, if the rock hasn't reached the bottom of
+     * the GAME, we want to move it again.
+     */
+     rock.style.top = `${RockNum + 2}px`;
+     //console.log(`Top vrednost za --> ${rock.style.top}`);
+     window.requestAnimationFrame(moveRock);
+
+   }else{
+     GAME.removeChild(rock);
+   }
+    /**
+     * But if the rock *has* reached the bottom of the GAME,
+     * we should remove the rock from the DOM
+     */
     }
 
   ROCKS.push(rock);
-  //console.log("Length of ROCKS...> "+ROCKS.length)
+  console.log("Length of ROCKS...> "+ROCKS.length)
   // We should kick of the animation of the rock around here
-  window.requestAnimationFrame(moveRock);
+  //window.requestAnimationFrame(moveRock);
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
 
   // Finally, return the rock element you've created
   return rock
+
+
 }
 
  /**
