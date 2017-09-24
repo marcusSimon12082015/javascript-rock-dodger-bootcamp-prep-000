@@ -123,7 +123,7 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  clearInterval(gameInterval);
+  window.clearInterval(gameInterval);
   console.log("ROCKS LENGTH -->"+ROCKS.length);
   console.log(GAME);
   var elements = document.getElementsByClassName('rock');
