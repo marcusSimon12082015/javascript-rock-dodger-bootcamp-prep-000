@@ -78,7 +78,7 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-    console.log("moveRock length " + ROCKS.length);
+     console.log("moveRock length " + ROCKS.length);
      var border = GAME_HEIGHT - 20;
      var RockNum = positionToInteger(rock.style.top);
      rock.style.top = `${RockNum + 2}px`;
@@ -90,9 +90,8 @@ function createRock(x) {
      if(checkCollision(rock)) {
        endGame();
        if (globalID) {
-
+         return;
        }
-       return;
        /**
        * Otherwise, if the rock hasn't reached the bottom of
        * the GAME, we want to move it again.
