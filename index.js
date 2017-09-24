@@ -78,7 +78,6 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-     console.log("moveRock length " + ROCKS.length);
      var border = GAME_HEIGHT - 20;
      var RockNum = positionToInteger(rock.style.top);
      rock.style.top = `${RockNum + 2}px`;
@@ -89,15 +88,12 @@ function createRock(x) {
      */
      if(checkCollision(rock)) {
        endGame();
-       if (globalID) {
-         return;
-       }
        /**
        * Otherwise, if the rock hasn't reached the bottom of
        * the GAME, we want to move it again.
        */
      }else if(RockNum < border){
-      globalID = window.requestAnimationFrame(moveRock);
+      window.requestAnimationFrame(moveRock);
      }else{
        /**
        * But if the rock *has* reached the bottom of the GAME,
@@ -127,19 +123,14 @@ function createRock(x) {
 function endGame() {
   window.clearInterval(gameInterval);
   gameInterval = 0;
-  console.log("ROCKS LENGTH -->"+ROCKS.length);
-  console.log(GAME);
   var elements = document.getElementsByClassName('rock');
   while (elements.length > 0) {
     elements[0].remove();
   }
   //we empty ROCKS array
   ROCKS.length = 0;
-  console.log(GAME);
-  console.log("ROCKS LENGTH -->"+ROCKS.length);
   window.removeEventListener('keydown', moveDodger);
   window.cancelAnimationFrame(globalID);
-  globalID = undefined;
   alert("YOU LOSE!");
 }
 
