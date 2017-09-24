@@ -123,16 +123,16 @@ function createRock(x) {
  */
 function endGame() {
   clearInterval(gameInterval);
-  //console.log("ROCKS LENGTH -->"+ROCKS.length);
-  //console.log(GAME);
+  console.log("ROCKS LENGTH -->"+ROCKS.length);
+  console.log(GAME);
   var elements = document.getElementsByClassName('rock');
   while (elements.length > 0) {
     elements[0].remove();
   }
   //we empty ROCKS array
   ROCKS.length = 0;
-  //console.log(GAME);
-  //console.log("ROCKS LENGTH -->"+ROCKS.length);
+  console.log(GAME);
+  console.log("ROCKS LENGTH -->"+ROCKS.length);
   window.removeEventListener('keydown', moveDodger);
   alert("YOU LOSE!");
 }
