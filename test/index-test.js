@@ -71,7 +71,7 @@ describe('Rock Dodger', () => {
     it('calls window.requestAnimationFrame()', () => {
       expect(window.requestAnimationFrame).toHaveBeenCalled()
     })
-/*
+
     describe('moveRock()', () => {
       it('checks for a collision', () => {
         let called = false
@@ -123,7 +123,7 @@ describe('Rock Dodger', () => {
 //       })
     })
   })
-*/
+
   describe('endGame()', () => {
     it('clears gameInterval', () => {
       const spy = expect.spyOn(window, 'clearInterval')
