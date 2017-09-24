@@ -132,6 +132,7 @@ function endGame() {
   //console.log(GAME);
   //console.log("ROCKS LENGTH -->"+ROCKS.length);
   window.removeEventListener('keydown', moveDodger);
+  cancelAnimationFrame(globalID);
   alert("YOU LOSE!");
 }
 
