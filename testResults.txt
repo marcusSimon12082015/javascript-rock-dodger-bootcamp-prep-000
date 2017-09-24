@@ -14,4 +14,79 @@
 [6C_|   /\_/\ 
 [6C^|__( - .-) 
 [6C  ""  "" 
+[4A 1
+ 0
+ 0
+
+[4A[5C-_
+[5C-_
+[5C-_
+[5C-_
+[4A[7C_,------,
+[7C_|  /\_/\ 
+[7C~|_( ^ .^) 
+[7C ""  "" 
+[4A 2
+ 0
+ 0
+
+[4A[5C-_-
+[5C-_-
+[5C-_-
+[5C-_-
+[4A[8C_,------,
+[8C_|   /\_/\ 
+[8C^|__( ^ .^) 
+[8C  ""  "" 
+[4A 3
+ 0
+ 0
+
+[4A[5C-_-_
+[5C-_-_
+[5C-_-_
+[5C-_-_
+[4A[9C_,------,
+[9C_|  /\_/\ 
+[9C~|_( ^ .^) 
+[9C ""  "" 
+[4A 3
+ 1
+ 0
+
+[4A[5C-_-_-
+[5C-_-_-
+[5C-_-_-
+[5C-_-_-
+[4A[10C_,------,
+[10C_|   /\_/\ 
+[10C^|__( x .x) 
+[10C  ""  "" 
+[4A 4
+ 1
+ 0
+
+[4A[5C-_-_-_
+[5C-_-_-_
+[5C-_-_-_
+[5C-_-_-_
+[4A[11C_,------,
+[11C_|  /\_/\ 
+[11C~|_( x .x) 
+[11C ""  "" 
 [4A
+
+
+
+
+  4 passing (873ms)
+  1 failing
+
+  1) Rock Dodger createRock(x) endGame() removes all of the rocks:
+     Error: spy was not called
+      at assert (node_modules/expect/lib/assert.js:29:9)
+      at Expectation.toHaveBeenCalled (node_modules/expect/lib/Expectation.js:318:28)
+      at Context.it (test/index-test.js:151:26)
+
+
+
