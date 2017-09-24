@@ -64,8 +64,6 @@ function createRock(x) {
   var top = 0
 
   rock.style.top = top
-
-
   /**
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
@@ -79,30 +77,28 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-    /**
-     * If a rock collides with the DODGER,
-     * we should call endGame()
-     */
-      var border = GAME_HEIGHT - 20;
+     var border = GAME_HEIGHT - 20;
      var RockNum = positionToInteger(rock.style.top);
      rock.style.top = `${RockNum + 2}px`;
 
+     /**
+     * If a rock collides with the DODGER,
+     * we should call endGame()
+     */
      if(checkCollision(rock)) {
        endGame();
-     }else if(RockNum < border){
        /**
        * Otherwise, if the rock hasn't reached the bottom of
        * the GAME, we want to move it again.
        */
-       //console.log(`Top vrednost za --> ${rock.style.top}`);
+     }else if(RockNum < border){
        window.requestAnimationFrame(moveRock);
-
      }else{
        /**
        * But if the rock *has* reached the bottom of the GAME,
        * we should remove the rock from the DOM
        */
-       rock.remove();
+       GAME.remove(rock);
      }
     }
 
