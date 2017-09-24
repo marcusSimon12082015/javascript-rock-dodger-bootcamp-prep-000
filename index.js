@@ -86,7 +86,7 @@ function createRock(x) {
      var border = GAME_HEIGHT - 20;
      var RockNum = positionToInteger(rock.style.top);
      if (checkCollision(rock)) {
-       endGame();
+       return endGame();
      }else if(RockNum != border){
     /**
      * Otherwise, if the rock hasn't reached the bottom of
