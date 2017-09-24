@@ -87,7 +87,7 @@ function createRock(x) {
      * we should call endGame()
      */
      if(checkCollision(rock)) {
-       return endGame();
+       endGame();
        /**
        * Otherwise, if the rock hasn't reached the bottom of
        * the GAME, we want to move it again.
@@ -130,7 +130,6 @@ function endGame() {
   ROCKS.length = 0;
   window.removeEventListener('keydown', moveDodger);
   alert("YOU LOSE!");
-  return;
 }
 
 function moveDodger(e) {
